@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #a7a7a727;
+    border-bottom: 1px solid black;
+}
+.navBar {
+    display: flex;
+    gap: 20px;
+}  
+.navBar a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.navBar a:hover {
+    color: #a7a7a7;
+    transition: all 0.3s ease;
+}
