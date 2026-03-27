@@ -1,12 +1,37 @@
-*{
-    margin: 0;  
+* {
+    margin: 0;
     padding: 0;
 }
+
 .conteinerAction {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vh;
+    width: auto;
     height: 100vh;
-    background-color: #a7a7a727;
+    perspective: 1000px;
+    background-color: #00000027;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+    background-color: #12539c;
+    transform-origin: center bottom;
+    /* ponto de rotação */
+    transition: transform 1s ease-in-out;
+    /* suavidade da animação */
+
+    animation: tombar linear;
+    
+    animation-timeline: Scroll();
+}
+
+@keyframes tombar {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(90deg);
+    }
 }

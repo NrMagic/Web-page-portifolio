@@ -1,13 +1,13 @@
 import CardCss from './components/Card.module.css'
 import AppCss from './components/App.module.css'
-import ImgCss from './components/Img.module.css'
+import ImgCss from './components/conteinerAction.module.css'
 export default function App() {
   return (
     <>
-      <body>
+      
 
         <div className={ImgCss.conteinerAction}>
-          <img src="" alt="" />
+          <div className={ImgCss.gif}></div>
         </div>
 
         <header className={AppCss.header}>
@@ -63,13 +63,13 @@ export default function App() {
                 </p>
               </div>
 
-              
+
             </div>
           </div>
 
         </main>
 
-      </body>
+    
 
     </>
   )
