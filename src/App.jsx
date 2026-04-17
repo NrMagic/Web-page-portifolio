@@ -14,7 +14,6 @@ export default function App() {
 
 
         <div className={ImgCss.conteinerAction}>
-          <div className={ImgCss.gif}></div>
         </div>
 
         <header className={AppCss.header}>
