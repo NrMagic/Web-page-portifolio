@@ -1,37 +1,117 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .conteinerAction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100vh;
-    perspective: 1000px;
-    background-color: #00000027;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100vh;
+  perspective: 1000px;
+  background-color: #00000027;
+  opacity: 0.8;
 }
 
-.gif {
-    width: 100%;
-    height: 100%;
-    background-color: #12539c;
-    transform-origin: center bottom;
-    /* ponto de rotação */
-    transition: transform 1s ease-in-out;
-    /* suavidade da animação */
-
-    animation: tombar linear;
-    
-    animation-timeline: Scroll();
+.imgAction {
+  width: 100%;
+  height: 100%;
+  transform-origin: center bottom;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  animation: tombar 1s linear;
+  animation-timeline: scroll();
+  z-index: 1;
 }
 
+.charactersLayer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+/* Personagem 1 */
+.character {
+  position: relative;
+  opacity: 0;
+  left: 50%;
+  transform: translateY(100px);
+  animation: showCharacter 6s ease forwards;
+}
+
+.character .speechBubble {
+  opacity: 0;
+  animation: bubble 6s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Personagem 2 */
+.character2 {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: showCharacter 6s ease forwards;
+  animation-delay: 6s; /* começa depois do primeiro */
+}
+
+.character2 .speechBubble {
+  opacity: 0;
+  animation: bubble 6s ease forwards;
+  animation-delay: 7s; /* aparece depois do personagem 2 */
+}
+/* Imagens dos personagens */
+.character img {
+  width: 70%;
+}
+
+.character2 img {
+  width: 70%;
+}
+
+.speechBubble {
+  position: absolute;
+  bottom: 90%;
+  left: -10%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 35px;
+}
+
+/* animações */
 @keyframes tombar {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotateX(90deg);
-    }
+  from {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(90deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes showCharacter {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+@keyframes bubble {
+  0%,20% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  30%,70% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.8); }
 }
