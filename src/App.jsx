@@ -3,9 +3,57 @@ import AppCss from './components/App.module.css'
 import ImgCss from './components/conteinerAction.module.css'
 import professor from './assets/professor-Photoroom.png';
 import professorExplic from './assets/professor-explic-Photoroom.png';
+import { useState } from 'react';
 
 
 export default function App() {
+ const [bg, setBg] = useState(AppCss.defaultBg);
+  const [title, setTitle] = useState("Suporte de Domingo");
+  const [info, setInfo] = useState("Selecione um projeto para ver detalhes.");
+  const [font, setFont] = useState("fontDefault");
+  const [fontp, setFontp] = useState("fontPDefault");
+
+  const projects = {
+    santé: {
+      bg: AppCss.bgSanté,
+      title: "Projeto Santé",
+      info: "Desenvolvimento de soluções para logística e transporte.",
+      font: "fontSanté",
+      fontp: "fontPSanté"
+      
+    },
+    codeTrouble: {
+      bg: AppCss.bgCodeTrouble,
+      title: "Code Trouble",
+      info: "Suporte técnico especializado em depuração de sistemas.",
+      font: "fontCodeTrouble",
+      fontp: "fontPCodeTrouble"
+    },
+    joysGourmet: {
+      bg: AppCss.bgJoysGourmet,
+      title: "Joy's Gourmet",
+      info: "Consultoria em tecnologia para restaurantes e delivery.",
+      font: "fontJoysGourmet",
+      fontp: "fontPJoysGourmet"
+    },
+    cjrSolucoes: {
+      bg: AppCss.bgCjrSolucoes,
+      title: "CJR Soluções",
+      info: "Manutenção e suporte em infraestrutura corporativa.",
+      font: "fontCjrSolucoes",
+      fontp: "fontPCjrSolucoes"
+    }
+  };
+   
+    const handleClick = (projectKey) => {
+    const project = projects[projectKey];
+    setBg(project.bg);
+    setTitle(project.title);
+    setInfo(project.info);
+    setFont(project.font);
+    setFontp(project.fontp);
+  };
+
 
   return (
     <>
@@ -35,47 +83,42 @@ export default function App() {
           </nav>
         </header>
 
-        <main className={AppCss.main}>
+         <main className={`${AppCss.main} ${bg}`}>
+     <div className={ AppCss.boxTitle}>
+      <h1 className={AppCss[font]}>{title}</h1>
+      </div>
+      <div className={AppCss.boxP}>
+      <p className={AppCss[fontp]}>{info}</p>
+      </div>
 
-          <h1 className={CardCss.h1}>Suporte de Domingo</h1>
-        <p className={CardCss.p}>A Suporte de Domingo é uma empresa especializada em oferecer soluções práticas e eficientes para quem precisa de atendimento técnico e suporte em momentos críticos, inclusive fora do horário comercial tradicional. Nosso diferencial está na disponibilidade: estamos prontos para atender aos domingos, garantindo que nossos clientes nunca fiquem sem assistência quando mais precisam.
-
-          Com uma equipe qualificada e comprometida, oferecemos suporte em tecnologia, manutenção de sistemas, consultoria e atendimento personalizado. Nosso objetivo é proporcionar tranquilidade e confiança, assegurando que cada demanda seja resolvida com agilidade e excelência.
-
-          Na Suporte de Domingo, acreditamos que o cuidado com o cliente não tem dia nem hora marcada. Por isso, trabalhamos para ser referência em atendimento humanizado e soluções rápidas, sempre priorizando a satisfação e a continuidade dos negócios de nossos parceiros.</p>
-
-          <div className={CardCss.cardBox}>
-            <div className={CardCss.cardInner}>
-              <div className={CardCss.wapper}>
-              <button className={CardCss.btnCard}>
-                <img src="/Captura de tela de 2026-03-31 08-34-37.png" id='bgI-santafe' alt="Santa fé" className={CardCss.imgCard}/>
-              </button>
-              </div>
-
-              <div className={CardCss.wapper}>
-              <button className={CardCss.btnCard}>
-                <img src="/Captura de tela de 2026-03-31 08-34-50.png" id='bgI-codeTrouble' alt="Code trouble" className={CardCss.imgCard} />
-              </button>
-              </div>
-
-              <div className={CardCss.wapper}>
-              <button className={CardCss.btnCard}>
-                <img src="/Captura de tela de 2026-03-31 08-35-03.png" id='bgI-joysGourmet' alt="joy's gourmet" className={CardCss.imgCard} />
-              </button>
-              </div>
-
-              <div className={CardCss.wapper}>
-              <button className={CardCss.btnCard}>
-                <img src="/Captura de tela de 2026-03-31 08-35-13.png" id='bgI-cjrSolucoes' alt="CJR Soluções" className={CardCss.imgCard} />
-              </button>              
-              </div>
-
-
-            </div>
+      <div className={CardCss.cardBox}>
+        <div className={CardCss.cardInner}>
+          <div className={CardCss.wapper}>
+            <button className={CardCss.btnCard} onClick={() => handleClick("santé")}>
+              <img src="/Captura de tela de 2026-03-31 08-34-37.png" alt="Santé" className={CardCss.imgCard}/>
+            </button>
           </div>
 
-        </main>
+          <div className={CardCss.wapper}>
+            <button className={CardCss.btnCard} onClick={() => handleClick("codeTrouble")}>
+              <img src="/Captura de tela de 2026-03-31 08-34-50.png" alt="Code trouble" className={CardCss.imgCard}/>
+            </button>
+          </div>
 
+          <div className={CardCss.wapper}>
+            <button className={CardCss.btnCard} onClick={() => handleClick("joysGourmet")}>
+              <img src="/Captura de tela de 2026-03-31 08-35-03.png" alt="Joy's Gourmet" className={CardCss.imgCard}/>
+            </button>
+          </div>
+
+          <div className={CardCss.wapper}>
+            <button className={CardCss.btnCard} onClick={() => handleClick("cjrSolucoes")}>
+              <img src="/Captura de tela de 2026-03-31 08-35-13.png" alt="CJR Soluções" className={CardCss.imgCard}/>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
     
 
     </>

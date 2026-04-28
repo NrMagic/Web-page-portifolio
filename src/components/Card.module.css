@@ -4,38 +4,21 @@
 }
 main {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;;
     height: 100vh;
+    width: 100%;
     background-color: #a7a7a727;
     position: relative;
     z-index: 0;
 
 }
-.h1 {
-    height: 50%;
-    width: 20%;
-    font-size: 80px;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 20px;
-    position: absolute;
-    left: 10%;
-    text-align: center;
-}
-.p{
-    height: 50%;
-    width: 40%;
-    font-size: 20px;
-    color: black;
-    position: absolute;
-    left: 55%;
-    text-align: center;    
-}
-
 .cardBox {
     display: flex;
-    justify-content: flex-end;;
+    justify-content: flex-end;
+    bottom: 20px;
+    right: 20px;
     width: 50%;
     padding: 20px;
     gap: 20px;
@@ -48,7 +31,6 @@ main {
 .cardInner {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     gap: 20px;
     position: absolute;
     bottom: 100px;
@@ -91,6 +73,4 @@ main {
         transform: translateX(0);
     }
 }
-
-/*Resumo da Landing Page Clínica Santé  
-O projeto apresenta uma landing page desenvolvida para a Clínica Santé, especializada em estética, saúde e odontologia. O design foi pensado para transmitir credibilidade, acessibilidade e confiança, reforçado por uma identidade visual consistente. A página destaca o logotipo da clínica — uma combinação de formas orgânicas que remetem a um trevo e uma borboleta — acompanhado do nome “SANTÉ” e do slogan “Estética, Saúde & Odontologia”. O portfólio descreve o trabalho como parte da construção da marca, com foco em experiência visual e comunicação clara.*/
+ 
