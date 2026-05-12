@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/pixel-code');
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Merienda:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Merienda:wght@300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 .header {
     position: sticky;
     top: 0;
@@ -17,45 +21,71 @@
     height: 100px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
     z-index: 10;
     opacity: 0.9;
 }
+
 .navBar {
     display: flex;
     gap: 20px;
-}  
+}
+
 .navBar a {
     text-decoration: none;
     color: black;
     font-size: 20px;
     font-weight: bold;
 }
+
 .navBar a:hover {
     color: #a7a7a7;
     transition: all 0.3s ease;
 }
+
 .main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* separa esquerda e direita */
-  align-items: center;            /* centraliza verticalmente */
-  height: 100vh;
-  width: 100%;                /* espaço nas laterais */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* separa esquerda e direita */
+    align-items: center;
+    /* centraliza verticalmente */
+    height: 100vh;
+    width: 100%;
+    /* espaço nas laterais */
+    position: relative;
 }
+
 .boxTitle {
-  align-items: left;  
-  width: auto;
-  padding: 20px;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.5);
-  filter: blur(5px);
-  position: relative;
-  z-index: 1;
+    align-items: left;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    position: relative;
+    left: 12%;
 }
+
 .boxP {
-  align-items: right;  
-  width: 50%;
-  padding: 20px;
+    align-items: left;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    position: relative;
+    right: 12%;
+}
+.defaultBg {
+    background-image: url("../assets/ChatGPT\ Image\ 12\ de\ mai.\ de\ 2026\,\ 08_48_09.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .bgSanté {
@@ -63,7 +93,10 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
 }
+
 .bgCodeTrouble {
     background-image: url("../assets/codetrouble.png");
     background-size: cover;
@@ -71,42 +104,164 @@
     background-attachment: fixed;
 }
 
+.bgJoysGourmet {
+    background-image: url("../assets/joysGourmet.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.bgCjrSolucoes {
+    background-image: url("../assets/cjrSolucoes.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .fontSanté {
-  
+
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     position: relative;
-    left: 12%;
-    z-index: 0;
 }
+
 .fontPSanté {
     font-family: 'Playfair Display', cursive;
     font-size: 24px;
     position: relative;
-    right: 5%;
 }
 
 .fontCodeTrouble {
-    
+
+    position: relative;
     font-family: 'Pixel Code', monospace;
+    font-size: 40px;
+}
 
-
+.fontPCodeTrouble {
+    font-family: 'Pixel Code', monospace;
+    font-size: 24px;
+    position: relative;
 }
 
 .fontJoysGourmet {
-  font-family: 'Pixelify Sans', sans-serif;
-  font-size: 16px;
+    font-family: 'Merienda', cursive;
+    font-size: 40px;
+    position: relative;
+}
+
+.fontPJoysGourmet {
+    font-family: 'Merienda', cursive;
+    font-size: 24px;
+    position: relative;
 }
 
 .fontCjrSolucoes {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 40px;
+    position: relative;
 }
+
+.fontPCjrSolucoes {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+    position: relative;
+}
+
 .fontDefault {
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;
     position: relative;
-    left: 60px;
 
+}
+.fontPDefault {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    position: relative;
+}
+.navBar button {
+    border: none;
+    background: transparent;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navBar button:hover {
+    color: #a7a7a7;
+    transition: all 0.3s ease;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    min-height: 170px;
+    padding: 40px 8%;
+    background: rgba(255, 255, 255, 0.3);
+    color: #111;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.footer p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.footerLinks a {
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footerLinks a:hover {
+    color: #777;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .boxTitle,
+    .boxP {
+        left: auto;
+        right: auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.saibaMais {
+  margin-left: 8px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.saibaMais:hover {
+  text-decoration: underline;
 }
